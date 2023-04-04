@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from django.http import HttpResponseRedirect
 
 
 @api_view(['POST'])
@@ -47,3 +48,7 @@ class PassengerViewSets(viewsets.ModelViewSet):
 class ReservationViewSets(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializers
+
+
+def index(request):
+    return HttpResponseRedirect('api/')

@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn FlightReservation.wsgi
+web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn FlightReservation.wsgi

@@ -23,8 +23,8 @@ router.register('flight', views.FlightViewSets)
 router.register('passenger', views.PassengerViewSets)
 router.register('reservation', views.ReservationViewSets)
 urlpatterns = [
-    path('', include('FlightApp.urls')),
+    path('', views.index),
     path('api/', include(router.urls)),
-    path('find/', views.findFlight),
-    path('save-reservation/', views.save_reservation)
+    path('api/find/', views.findFlight),
+    path('api/save-reservation/', views.save_reservation)
 ]
